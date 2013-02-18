@@ -1,0 +1,38 @@
+{
+
+  "name": "brainy-api",
+  "description": "create a RESTful API from your Backbone models",
+  "keywords": ["brainy", "backbone", "rest", "api"],
+
+  "version": "0.0.1",
+  "main": "./src/index",
+  "bin": {
+    "brainy-api": "./bin/server"
+  },
+
+  "dependencies": {
+    "amdefine": "0.0.4",
+    "backbone": "0.9.10",
+    "brainy-sync": "git://github.com/brainyio/brainy-sync.git",
+    "express": "3.1.0",
+    "file": "0.2.1",
+    "nconf": "0.6.7",
+    "requirejs": "2.1.4",
+    "underscore": "1.4.4"
+  },
+
+  "engines": {
+    "node": ">=0.8.12"
+  },
+
+  "author": {
+    "name": "catshirt",
+    "email": "caden@catshirt.net"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/brainyio/brainy-boilerplate"
+  }
+
+}

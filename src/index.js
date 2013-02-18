@@ -19,6 +19,7 @@ define([
 
       if (is_model) {
 
+        // POST /:urlRoot
         app.post(coll_ep, function(req, res) {
           var attrs = req.body,
             resource = new Resource();
@@ -32,6 +33,7 @@ define([
           });
         });
 
+        // GET /:urlRoot/:id
         app.get(model_ep, function(req, res) {
           var attrs = req.params,
             resource = new Resource(attrs);
@@ -47,9 +49,12 @@ define([
 
       } else {
 
+        // GET /:url
         app.get(coll_ep, function(req, res) {
-          var resource = new Resource();
+          var attrs = req.query,
+            resource = new Resource();
           return resource.fetch({
+            data: attrs,
             success: function(model, resp) {
               return res.send(resp);
             },

@@ -36,8 +36,10 @@ define([
         // GET /:urlRoot/:id
         app.get(model_ep, function(req, res) {
           var attrs = req.params,
+            query = req.query,
             resource = new Resource(attrs);
           return resource.fetch({
+            data: query,
             success: function(model, resp) {
               return res.send(resp);
             },

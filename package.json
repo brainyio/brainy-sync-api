@@ -4,7 +4,7 @@
   "description": "create a RESTful API from your Backbone models",
   "keywords": ["brainy", "backbone", "rest", "api"],
 
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./src/index",
   "bin": {
     "brainy-api": "./bin/config"

@@ -47,6 +47,35 @@ define([
           });
         });
 
+        // DELETE /:urlRoot/:id
+        app.del(model_ep, function(req, res) {
+          var attrs = req.params,
+            resource = new Resource(attrs);
+          return resource.destroy({
+            success: function(model, resp) {
+              return res.send(resp);
+            },
+            error: function(model, resp) {
+              return res.send(resp);
+            }
+          });
+        });
+
+        // DELETE /:urlRoot/:id
+        app.put(model_ep, function(req, res) {
+          var attrs = req.params,
+            body = req.body,
+            resource = new Resource(attrs);
+          return resource.save(body, {
+            success: function(model, resp) {
+              return res.send(resp);
+            },
+            error: function(model, resp) {
+              return res.send(resp);
+            }
+          });
+        });
+
       } else {
 
         // GET /:url

@@ -14,11 +14,11 @@ require([
   nconf.defaults({
 
     http: {
-      port: 80
+      port: 8000
     },
 
     paths: {
-      resources: null
+      resources: 'js/resources'
     },
 
     db: {

@@ -2,7 +2,7 @@
 var requirejs = require('requirejs');
 
 requirejs.config({
-  name: 'brainy-api',
+  name: 'brainy-sync-api',
   deps: ['main'],
   baseUrl: __dirname + '/..',
   paths: {

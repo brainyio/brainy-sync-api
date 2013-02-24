@@ -1,13 +1,13 @@
 {
 
-  "name": "brainy-api",
+  "name": "brainy-sync-api",
   "description": "create a REST API from your Backbone models and collections",
   "keywords": ["brainy", "backbone", "rest", "api"],
 
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./src/index",
   "bin": {
-    "brainy-api": "./bin/config"
+    "brainy-sync-api": "./bin/config"
   },
 
   "dependencies": {
@@ -32,7 +32,7 @@
 
   "repository": {
     "type": "git",
-    "url": "http://github.com/brainyio/brainy-api"
+    "url": "http://github.com/brainyio/brainy-sync-api"
   }
 
 }

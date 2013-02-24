@@ -21,24 +21,30 @@ require([
       resources: 'js/resources'
     },
 
-    db: {
-      host: '127.0.0.1',
-      port: 27017,
-      name: 'brainy-sync-api'
+    sync: {
+      adapter: 'mongodb',
+      options: {
+        host: '127.0.0.1',
+        port: 27017,
+        name: 'brainy-sync-api'
+      }
     }
 
   });
 
-  var app = express();
+  var app = express(),
+    sync_conf = nconf.get('sync'),
+    paths_conf = nconf.get('paths'),
+    http_conf = nconf.get('http');
 
-  Backbone.sync = Sync(nconf.get('db'));
+  Backbone.sync = Sync(sync_conf.adapter, sync_conf.options);
 
-  file.walk(nconf.get('paths').resources, function(n, p, d, files) {
+  file.walk(paths_conf.resources, function(n, p, d, files) {
     require(files, function() {
       api(app, _.values(arguments));
     });
   });
 
-  app.listen(nconf.get('http').port);
+  app.listen(http_conf.port);
 
 });

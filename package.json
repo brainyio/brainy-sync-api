@@ -1,10 +1,10 @@
 {
 
   "name": "brainy-api",
-  "description": "create a RESTful API from your Backbone models",
+  "description": "create a REST API from your Backbone models and collections",
   "keywords": ["brainy", "backbone", "rest", "api"],
 
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./src/index",
   "bin": {
     "brainy-api": "./bin/config"
@@ -13,7 +13,7 @@
   "dependencies": {
     "amdefine": "0.0.4",
     "backbone": "0.9.10",
-    "brainy-sync": "0.0.1",
+    "brainy-sync": "0.0.3",
     "express": "3.1.0",
     "file": "0.2.1",
     "nconf": "0.6.7",

@@ -23,6 +23,9 @@ define([
         app.post(coll_ep, function(req, res) {
           var attrs = req.body,
             resource = new Resource();
+          resource.on('invalid', function() {
+            return res.send(400, resource.validationError);
+          });
           return resource.save(attrs, {
             success: function(model, resp) {
               return res.send(resp);
@@ -63,12 +66,35 @@ define([
           });
         });
 
-        // DELETE /:urlRoot/:id
+        // PUT /:urlRoot/:id
         app.put(model_ep, function(req, res) {
           var attrs = req.params,
             body = req.body,
             resource = new Resource(attrs);
+          resource.on('invalid', function() {
+            return res.send(400, resource.validationError);
+          });
           return resource.save(body, {
+            success: function(model, resp) {
+              return res.send(resp);
+            },
+            error: function(model, resp) {
+              return res.send(resp);
+            }
+          });
+        });
+
+        // PATCH /:urlRoot/:id
+        app.patch(model_ep, function(req, res) {
+          var attrs = req.params,
+            body = req.body,
+            resource = new Resource(attrs);
+          resource.on('invalid', function() {
+            return res.send(400, resource.validationError);
+          });
+          return resource.save(body, {
+            patch: true,
+            validate: false,
             success: function(model, resp) {
               return res.send(resp);
             },
